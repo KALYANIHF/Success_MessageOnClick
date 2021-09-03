@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>on click success</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --font1: "Roboto", sans-serif;
+      }
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        position: relative;
+      }
+      .success {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+        display: none;
+      }
+      .img-fig {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .success-img {
+        border-radius: 1.5rem;
+      }
+      .modify-btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="success">
+      <figure class="img-fig">
+        <img class="success-img" src="img/check.gif" alt="" />
+      </figure>
+    </div>
+    <div class="modify-btn">
+      <div class="btn btn-success px-5" id="add-btn">Add</div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      const addbtn = document.getElementById("add-btn");
+      addbtn.addEventListener("click", () => {
+        document.querySelector(".success").style.display = "block";
+        setTimeout(() => {
+          document.querySelector(".success").style.display = "none";
+        }, 1700);
+      });
+    </script>
+  </body>
+</html>
